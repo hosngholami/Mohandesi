@@ -1,0 +1,11 @@
+accounting_adapter:
+   GrantNorthccountAdapter
+accounting_module:
+   grantnorthaccounting.externalsystem.adapter
+
+
+inventory_adapter:
+   InventoryAdapter
+
+inventory_module:
+   inventory.externalsystem.adapter

@@ -1,0 +1,11 @@
+accounting_adapter:
+   SAPAccountAdapter
+accounting_module:
+   accounting.adapter
+
+
+inventory_adapter:
+   InventoryAdapter
+
+inventory_module:
+   inventory.adapter
