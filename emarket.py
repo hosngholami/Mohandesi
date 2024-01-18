@@ -1,11 +1,7 @@
 import psycopg2
-from Factory.ServiceFactory import Factory
 from sales.controller import *
 
-class Shop:
-    def __init__(self, id, name):
-        self.id = id,
-        self.name = name
+
 
 
 
