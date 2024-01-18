@@ -1,10 +1,10 @@
-import psycopg2
 from sales.controller import *
-
+from test import register
 state = {
     'exit': 0,
     'adapter': 1,
-    'strategy': 2
+    'strategy': 2,
+    'listener': 3 
 }
 
 
@@ -18,6 +18,9 @@ if __name__ == '__main__':
                 get_adapter()
             case 2:
                 get_strategy()
+            case 3:
+                register()
+                publisher()
             case 0:
                 exit(1)
 
