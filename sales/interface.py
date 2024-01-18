@@ -8,7 +8,7 @@ class IAccountingAdapter(object):
         pass
 
     @abstractclassmethod
-    def sale(self, price, delivery):
+    def sale(self, factors):
         pass
 
 

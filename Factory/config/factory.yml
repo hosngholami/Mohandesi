@@ -1,7 +1,7 @@
 accounting_adapter:
-   SAPAccountAdapter
+   GrantNorthccountAdapter
 accounting_module:
-   accounting.adapter
+   grantnorthaccounting.externalsystem.adapter
 
 
 inventory_adapter:

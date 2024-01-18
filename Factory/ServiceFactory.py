@@ -23,19 +23,19 @@ class Factory:
 
 
     def getInventoryAdapter(self):
-        with open('shop/config/factory.yml', 'r') as file:
+        with open('Factory/config/factory.yml', 'r') as file:
             data = yaml.safe_load(file)
             adpater_name =  data['inventory_adapter'] 
             module_name = data['inventory_module']
 
-        inventory_factory = getattr(importlib.import_module(module_name), adpater_name)
-        return inventory_factory()
+        instance = getattr(importlib.import_module(module_name), adpater_name)
+        return instance()
 
 
 
     def getAccountingAdapter(self):
 
-        with open('shop/config/factory.yml', 'r') as file:
+        with open('Factory/config/factory.yml', 'r') as file:
             data = yaml.safe_load(file)
             adpater_name =  data['accounting_adapter'] 
             module_name = data['accounting_module']

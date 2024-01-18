@@ -1,6 +1,6 @@
 import psycopg2
 from Factory.ServiceFactory import Factory
-
+from sales.controller import *
 
 class Shop:
     def __init__(self, id, name):
@@ -9,10 +9,8 @@ class Shop:
 
 
 
-def adapter():
-    factory = Factory.getInstance(Factory)
-    accounting =  factory.getAccountingAdapter()
-    print(accounting.sale(10, 20))
+
+
 
 state = {
     'exit': 0,
@@ -22,12 +20,12 @@ state = {
 
 if __name__ == '__main__':
     while True:
-        print('enter 0 for exit')
+        print('you can write exiit for exit')
         key = input('plese select model: ')
         
         match state[key]:
             case 1:
-                adapter()
+                get_adapter()
             case 0:
                 exit(1)
 

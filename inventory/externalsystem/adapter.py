@@ -1,4 +1,4 @@
-from shop.interface import IInventoryAdapter
+from sales.interface import IInventoryAdapter
 
 
 
