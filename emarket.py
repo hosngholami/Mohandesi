@@ -1,7 +1,6 @@
 import psycopg2
 from sales.controller import *
 
-
 state = {
     'exit': 0,
     'adapter': 1,

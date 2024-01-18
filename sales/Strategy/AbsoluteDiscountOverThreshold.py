@@ -1,6 +1,5 @@
 from sales.Strategy.interface import ISalesPricingStrategy
 
-
 class SalesPricingStrategy(ISalesPricingStrategy):
     
 
