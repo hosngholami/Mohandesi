@@ -9,3 +9,9 @@ inventory_adapter:
 
 inventory_module:
    inventory.adapter
+
+
+strategy_name:
+   SalesPricingStrategy
+strategy_module:
+   sales.Strategy.AbsoluteDiscountOverThreshold

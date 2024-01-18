@@ -6,11 +6,8 @@ class Factory:
     accounting_adapter = ""
     inverntory_adapter = ""
 
-    
     def __init__(self):
         pass
-
-
 
     @staticmethod
     def getInstance(factory):
@@ -18,9 +15,6 @@ class Factory:
         if factory.instance is None:
             factory.instance = Factory()
         return factory.instance
-
-
-
 
     def getInventoryAdapter(self):
         with open('Factory/config/factory.yml', 'r') as file:
@@ -31,8 +25,6 @@ class Factory:
         instance = getattr(importlib.import_module(module_name), adpater_name)
         return instance()
 
-
-
     def getAccountingAdapter(self):
 
         with open('Factory/config/factory.yml', 'r') as file:
@@ -42,9 +34,18 @@ class Factory:
             
 
         instance = getattr(importlib.import_module(module_name), adpater_name)
-        accounting_factory = instance()
-        return accounting_factory
+        return instance()
     
+
+    def getSalesPricingStrategy(self):
+        with open('Factory/config/factory.yml', 'r') as file:
+                data = yaml.safe_load(file)
+                strategy_name =  data['strategy_name'] 
+                strategy_module = data['strategy_module']
+                
+
+        instance = getattr(importlib.import_module(strategy_module), strategy_name)
+        return instance()
 
 
 

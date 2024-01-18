@@ -1,6 +1,6 @@
 from Factory.ServiceFactory import Factory
-
-
+from sales.Strategy.PercentDisCountPricingStrategy import SalesPricingStrategy
+from sales.Strategy.interface import *
 
 factors = [
     {'code':'100', 'count':10, 'total_price':150000},
@@ -14,9 +14,15 @@ factors = [
 
 
 
+factory = Factory.getInstance(Factory)
 
 
 def get_adapter():
-    factory = Factory.getInstance(Factory)
+    
     accounting =  factory.getAccountingAdapter()
     print(accounting.sale(factors))
+
+
+def get_strategy():
+    strategy = factory.getSalesPricingStrategy()
+    print(strategy.get_total(factors))
