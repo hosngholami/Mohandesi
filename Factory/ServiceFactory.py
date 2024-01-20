@@ -46,6 +46,33 @@ class Factory:
 
         instance = getattr(importlib.import_module(strategy_module), strategy_name)
         return instance()
+    
+
+    def get_proxy(self):
+        with open('Factory/config/factory.yml', 'r') as file:
+                data = yaml.safe_load(file)
+                proxy_name =  data['proxy_name'] 
+                proxy_adapter = data['proxy_moudle']
+
+        instance = getattr(importlib.import_module(proxy_adapter), proxy_name)
+        return instance()
+    
+    def get_tax_adapter(self):
+        list_instance = []
+        with open('Factory/config/factory.yml', 'r') as file:
+            data = yaml.safe_load(file)
+            source_name =  data['source_name'] 
+            source_module = data['source_module']
+            for i in range(len(source_name)) :
+                instance = getattr(importlib.import_module(source_module), source_name[i])
+                list_instance.append(instance())
+        return list_instance
+                
+       
+         
+         
+  
+
 
 
 

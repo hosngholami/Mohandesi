@@ -15,3 +15,16 @@ strategy_name:
    SalesPricingStrategy
 strategy_module:
    sales.Strategy.AbsoluteDiscountOverThreshold
+
+
+
+proxy_name:
+   Proxy
+proxy_moudle:
+   sales.proxy.sales_proxy
+source_name:
+   - TaxAdapter
+   - GoldTaxProAdapter
+source_module:
+   sales.proxy.adapter
+   

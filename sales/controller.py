@@ -3,6 +3,7 @@ from sales.Strategy.PercentDisCountPricingStrategy import SalesPricingStrategy
 from sales.Strategy.interface import *
 from sales.Abserver.interface import *
 from sales.Sales import Sale
+from sales.proxy.interface import *
 import paho.mqtt.client as mqtt
 
 factors = [
@@ -49,6 +50,16 @@ def publisher():
     while True:
         
         Sale.publish_property_event('test', 10)
-        
+
+
+def proxy():
+
+    factors = {
+
+    }
+
+    iProductAdaper = IProductAdapter
+    iProductAdaper = factory.get_proxy()
+    iProductAdaper.get_adapter()
 
 

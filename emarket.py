@@ -4,7 +4,8 @@ state = {
     'exit': 0,
     'adapter': 1,
     'strategy': 2,
-    'listener': 3 
+    'listener': 3,
+    'proxy': 4
 }
 
 
@@ -21,6 +22,8 @@ if __name__ == '__main__':
             case 3:
                 register()
                 publisher()
+            case 4:
+                proxy()
             case 0:
                 exit(1)
 
