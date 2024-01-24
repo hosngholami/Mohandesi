@@ -20,9 +20,11 @@ class Sale:
            
            i = 0
            while True:
+                print('if you want save,you should write 0')
                 factor = int(input('select product: '))
 
                 if factor == 0:
+                    client.publish(name , 0)
                     break
                 client.publish(name , factor)
         #    client.publish('test', 10)

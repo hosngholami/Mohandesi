@@ -1,13 +1,18 @@
 from sales.controller import *
-from test import register
+from ui_form import register
+import os
+import json
 state = {
     'exit': 0,
     'adapter': 1,
     'strategy': 2,
-    'listener': 3,
+    'abserver': 3,
     'proxy': 4
 }
-
+def get_database_product():
+      with open(os.getcwd() + '/sales/Abserver/database.json') as data:
+        for item in data:
+            print(item)
 
 if __name__ == '__main__':
     while True:
@@ -20,6 +25,7 @@ if __name__ == '__main__':
             case 2:
                 get_strategy()
             case 3:
+                get_database_product()
                 register()
                 publisher()
             case 4:
