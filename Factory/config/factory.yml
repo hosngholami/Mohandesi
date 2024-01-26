@@ -34,4 +34,15 @@ facade_name:
 facade_module:
    inventory.InventoryFacade.inventory
 
+composit_name:
+   BestForStore
+   # CompositPricingStrategy
+composit_module:
+   # sales.composit.bestforcustomer
+   sales.composit.bestforstore
+   # sales.composit.composit
+strategy_name:
+   - SalesPricingStrategy,sales.composit.AbsoluteDiscountOverThreshold
+   - SalesPricingStrategy,sales.composit.PercentDisCountPricingStrategy
+
    

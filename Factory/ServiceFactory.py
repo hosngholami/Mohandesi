@@ -69,6 +69,30 @@ class Factory:
                 list_instance.append(instance())
         return list_instance
     
+
+    def get_composit_strategy(self):
+        with open('Factory/config/factory.yml', 'r') as file:
+            data = yaml.safe_load(file)
+            source_name =  data['composit_name'] 
+            source_module = data['composit_module']
+            instance = getattr(importlib.import_module(source_module), source_name)
+        return instance()
+    
+    def get_strategy(self):
+        with open('Factory/config/factory.yml', 'r') as file:
+            list_strategy = []
+            data = yaml.safe_load(file)
+            strategy_name =  data['strategy_name'] 
+
+            for i in range(len(strategy_name)):
+                name = strategy_name[i].split(',')
+                instance = getattr(importlib.import_module(name[1]), name[0])
+                list_strategy.append(instance())
+        return list_strategy
+
+
+
+    
     
                 
        

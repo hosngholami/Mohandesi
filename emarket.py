@@ -8,7 +8,8 @@ state = {
     'strategy': 2,
     'abserver': 3,
     'proxy': 4,
-    'facade': 5
+    'facade': 5,
+    'composit': 6
 }
 def get_database_product():
       with open(os.getcwd() + '/sales/Abserver/database.json') as data:
@@ -40,6 +41,8 @@ if __name__ == '__main__':
                     is_available(product_id=product_id)
                 if status == 2:
                     get_total_product()
+            case 6:
+                composit_strategy()
             case 0:
                 exit(1)
 

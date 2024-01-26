@@ -71,4 +71,13 @@ def get_total_product():
     facade = InventoryFacade.getInstance(InventoryFacade)
     product = facade.get_total_product()
 
+
+def composit_strategy():
+    composit = factory.get_composit_strategy()
+    strategy = factory.get_strategy()
+
+    for i in range(len(strategy)):
+        composit.add(strategy[i])
+
+    print(composit.get_total(factors))
    
