@@ -5,6 +5,7 @@ class Factory:
     instance = None
     accounting_adapter = ""
     inverntory_adapter = ""
+    inventory = ""
 
     def __init__(self):
         pass
@@ -67,6 +68,8 @@ class Factory:
                 instance = getattr(importlib.import_module(source_module), source_name[i])
                 list_instance.append(instance())
         return list_instance
+    
+    
                 
        
          

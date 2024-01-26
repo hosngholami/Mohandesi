@@ -9,17 +9,12 @@ class PropertyListener(IPropertyListener):
     def on_proprety_listener(self, source, name, value):
         print('test')
 
-
-
     def subscribe(self):
         Sale.addPropertyListener(self)
 
     
 
 def subscribe():
-     
-
-            
      global client, mqtt
      client = mqtt.Client()
 
@@ -44,10 +39,6 @@ def subscribe():
                      print(data[i])
                      sum += int(data[i][0]['price'])
             
-
-     
-            
-        
 
      client.connect('localhost', 1883, 60)
      client.on_connect = on_connect

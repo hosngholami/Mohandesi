@@ -4,6 +4,7 @@ from sales.Strategy.interface import *
 from sales.Abserver.interface import *
 from sales.Sales import Sale
 from sales.proxy.interface import *
+from inventory.InventoryFacade.InventoryFacade import InventoryFacade
 import paho.mqtt.client as mqtt
 
 factors = [
@@ -62,4 +63,12 @@ def proxy():
     iProductAdaper = factory.get_proxy()
     iProductAdaper.get_adapter()
 
+def is_available(product_id):
+    facade = InventoryFacade.getInstance(InventoryFacade)
+    product = facade.is_available(product_id)
 
+def get_total_product():
+    facade = InventoryFacade.getInstance(InventoryFacade)
+    product = facade.get_total_product()
+
+   

@@ -1,9 +1,9 @@
 [
-    [{"id":"100", "title":"phone", "price":"150"}],
-    [{"id":"101", "title":"smartwatch", "price":"600"}],
-    [{"id":"102", "title":"keyboard", "price":"450"}],
-    [{"id":"103", "title":"headphone", "price":"350"}],
-    [{"id":"104", "title":"galaxy", "price":"250"}]
+    [{"id":"100", "title":"phone", "price":"150", "count":250}],
+    [{"id":"101", "title":"smartwatch", "price":"600", "count":150}],
+    [{"id":"102", "title":"keyboard", "price":"450", "count":60}],
+    [{"id":"103", "title":"headphone", "price":"350", "count":40}],
+    [{"id":"104", "title":"galaxy", "price":"250", "count":50}]
 ]
 
 

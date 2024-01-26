@@ -27,4 +27,11 @@ source_name:
    - GoldTaxProAdapter
 source_module:
    sales.proxy.adapter
+
+
+facade_name:
+    Product
+facade_module:
+   inventory.InventoryFacade.inventory
+
    

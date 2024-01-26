@@ -7,7 +7,8 @@ state = {
     'adapter': 1,
     'strategy': 2,
     'abserver': 3,
-    'proxy': 4
+    'proxy': 4,
+    'facade': 5
 }
 def get_database_product():
       with open(os.getcwd() + '/sales/Abserver/database.json') as data:
@@ -30,6 +31,15 @@ if __name__ == '__main__':
                 publisher()
             case 4:
                 proxy()
+            case 5:
+                print('enter 1 for get status product')
+                print('enter 2 get wearhouse inventory')
+                status  = int(input('please enter number : '))
+                if status == 1:
+                    product_id = input('enter product id')
+                    is_available(product_id=product_id)
+                if status == 2:
+                    get_total_product()
             case 0:
                 exit(1)
 
